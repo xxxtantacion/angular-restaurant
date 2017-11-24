@@ -62,7 +62,7 @@
         <md-card-content>
             <md-list>
                 <md-list-item *ngFor="let element of leader">
-                    <img md-list-avatar src={{element.image}} alt={{element.name}}>
+                    <img md-list-avatar src="{{BaseURL + element.image}}" alt={{element.name}}>
                     <p md-line>{{element.name}}</p>
                     <p md-line>{{element.designation}}</p>
                     <p md-line>{{element.description}}</p>
@@ -71,7 +71,11 @@
         </md-card-content>
     </md-card>
 </div>
-<div [hidden]="leader">
+<div [hidden]="leader || leaderErrMess">
     <md-spinner></md-spinner> <h4>Loading . . . Please Wait</h4>
+</div>
+<div *ngIf="leaderErrMess">
+    <h2>Error</h2>
+    <h4>{{leaderErrMess}}</h4>
 </div>
 </div>
