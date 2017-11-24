@@ -11,8 +11,10 @@ import { ProcessHttpmsgService } from "./process-httpmsg.service";
 
 import { RestangularModule, Restangular } from "ngx-restangular";
 
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/observable/of';
+import "rxjs/add/operator/delay";
+import "rxjs/add/operator/catch";
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export class PromotionService {
