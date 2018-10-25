@@ -34,6 +34,6 @@ export class LeaderService {
     return this.restangular
     .all("leaders")
     .getList({ featured: true })
-    .map(promotions => promotions[0]);
+    .map(leaders => leaders[0]);
   }
 }

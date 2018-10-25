@@ -100,5 +100,19 @@
         </p>
         <button type="submit" md-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
       </form>
+      <div [hidden]="successful" *ngIf="feedback" [@expand]>
+        <h3>Submitting Form</h3>
+        <md-spinner></md-spinner>
+      </div>
+      <div *ngIf="successful" [@expand]>
+        <h3>Your Feedback</h3>
+        <p>First Name: {{feedback.firstname}}</p>
+        <p>Last Name: {{feedback.lastname}}</p>
+        <p>Tel. Number: {{feedback.telnum}}</p>
+        <p>Email: {{feedback.email}}</p>
+        <p>Contact You?: {{feedback.agree}}</p>
+        <p>How?: {{feedback.contacttype}}</p>
+        <p>Feedback: {{feedback.message}}</p>
+      </div>
   </div>
 </div>
